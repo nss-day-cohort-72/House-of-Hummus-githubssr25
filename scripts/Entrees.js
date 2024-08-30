@@ -32,6 +32,26 @@ export const Entrees = () => {
     return html
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // had this previously
 //   <input type="radio" name="entree" value="${entree.name}" /> ${entree.name}
 // Value in Radio Input: The value of each radio button was set to entree.name, which means that when a user selected an entree, 

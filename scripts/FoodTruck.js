@@ -21,24 +21,8 @@ export const placeComboOrder = async () => {
         document.dispatchEvent(new CustomEvent("purchaseOccured"));
 
 
-    // purchaseButton.disabled = false;  // Re-enable button after order is placed
-        
-//corresponds to this in main 
-// document.addEventListener("stateChanged", event => {
-//     console.log("State of data has changed. Regenerating HTML...");
-//     renderAllHTML();  // This function should be responsible for rendering your main UI, including the updated Sales list
-// });
-
-
 }
 
-//DUPLICATE AND MIGHT BE CAUSING ISSUES 
-// document.addEventListener("click", (event) => {
-//     console.log("a click event happened upon clicking purchase so we are calling placeComboOrder()")
-//     if (event.target.id === "purchase") {
-//         placeComboOrder();
-//     }
-// });
 
 export const FoodTruck = () => {
     return `
@@ -58,3 +42,44 @@ export const FoodTruck = () => {
 
     `
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//DUPLICATE AND MIGHT BE CAUSING ISSUES 
+// document.addEventListener("click", (event) => {
+//     console.log("a click event happened upon clicking purchase so we are calling placeComboOrder()")
+//     if (event.target.id === "purchase") {
+//         placeComboOrder();
+//     }
+// });
+
+
+    // purchaseButton.disabled = false;  // Re-enable button after order is placed
+        
+//corresponds to this in main 
+// document.addEventListener("stateChanged", event => {
+//     console.log("State of data has changed. Regenerating HTML...");
+//     renderAllHTML();  // This function should be responsible for rendering your main UI, including the updated Sales list
+// });

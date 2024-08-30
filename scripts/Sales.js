@@ -5,6 +5,67 @@ const veggies = getVeggies()
 const entrees = getEntrees()
 const sides = getSides()
 
+export const buildOrderListItem = (purchase) => {
+    let total = totalOrderPrice(purchase);
+
+    // Skip rendering if the total is $0.00
+    if (total === 0) {
+        return '';  // Returning an empty string effectively skips this purchase
+    }
+
+    return `<li>
+        Receipt #${purchase.id} = ${total.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD"
+        })}
+    </li>`
+}
+
+
+export const Sales = () => {
+    const sales = getPurchases()
+    return `
+        <ul>
+            ${sales.map(
+                (sale) => {
+                    // Reflect: What is the scope of this `return` keyword?
+                    return buildOrderListItem(sale)
+                }
+            ).join("")}
+        </ul>
+    `
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // export const addPurchase = async () => {
 
 // let newPurchase = {
@@ -78,35 +139,3 @@ const sides = getSides()
 
 //     return total;
 // }
-
-export const buildOrderListItem = (purchase) => {
-    let total = totalOrderPrice(purchase);
-
-    // Skip rendering if the total is $0.00
-    if (total === 0) {
-        return '';  // Returning an empty string effectively skips this purchase
-    }
-
-    return `<li>
-        Receipt #${purchase.id} = ${total.toLocaleString("en-US", {
-            style: "currency",
-            currency: "USD"
-        })}
-    </li>`
-}
-
-
-export const Sales = () => {
-    const sales = getPurchases()
-    return `
-        <ul>
-            ${sales.map(
-                (sale) => {
-                    // Reflect: What is the scope of this `return` keyword?
-                    return buildOrderListItem(sale)
-                }
-            ).join("")}
-        </ul>
-    `
-}
-

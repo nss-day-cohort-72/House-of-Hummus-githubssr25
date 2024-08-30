@@ -16,13 +16,7 @@ const mainContainer = document.querySelector("#container")
         purchaseButton.addEventListener('click', placeComboOrder);
     }
    }
-          // Re-attach the listener after the DOM is re-rendered
-          // NOTE YOU HAVE TO RE ATTACH EVENT LISTENERS TO CUSTOM ELEMENTS UPON RE RENDER
-          // NOT IF YOU WERE ATTACHING TO ENTIRE DOCUMENT BUT TO CUSTOM EVENT YES
-        //   const purchaseButton = document.getElementById('purchase');
-        //   if (purchaseButton) {
-        //       purchaseButton.addEventListener('click', placeComboOrder);
-        //   }
+     
 
 const renderAllHTML = () => {
     let mainContainerHTML = `
@@ -57,6 +51,25 @@ const renderAllHTML = () => {
    })
     
     
+
+renderAllHTML();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Check if the Listener is Already Attached: The condition if (!document.getElementById('purchase').dataset.listenerAdded) checks 
 // if a custom data attribute (data-listener-added) is set on the purchase button. 
 //If it's not set, it means that the event listener has not been added yet.
@@ -75,5 +88,13 @@ const renderAllHTML = () => {
 
 
     // Initial rendering
-renderAllHTML();
 
+    
+
+     // Re-attach the listener after the DOM is re-rendered
+          // NOTE YOU HAVE TO RE ATTACH EVENT LISTENERS TO CUSTOM ELEMENTS UPON RE RENDER
+          // NOT IF YOU WERE ATTACHING TO ENTIRE DOCUMENT BUT TO CUSTOM EVENT YES
+        //   const purchaseButton = document.getElementById('purchase');
+        //   if (purchaseButton) {
+        //       purchaseButton.addEventListener('click', placeComboOrder);
+        //   }

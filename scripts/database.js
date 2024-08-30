@@ -35,23 +35,10 @@ const database = {
         { id: 6, title: "Mini Souvlaki", price: 5.20 }
     ],
 
-    // database.entrees, database.veggies, database.sides: 
-    //These arrays represent all the available
-    //  options for the user to choose from. They are static and should not 
-    //change based on user interaction. 
-    // Their purpose is to provide the list of options that the user can select.
-
 
     purchases: [],
     comboChoices: {},
-//State Management: The comboChoices object is acting as a 
-//temporary state holder for the user's
-// current selections. By the time placeComboOrder is called, comboChoices 
-//already contains the selected entree, veggie, and side.
-// IMPORTNAT: After the order is finalized (i.e., after the placeComboOrder 
-//function processes the current 
-//selections stored in comboChoices), you would typically want to 
-//clear the comboChoices object to reset the state and prepare for the next order.
+
 
 
 }
@@ -60,8 +47,7 @@ export const getVeggies = () => database.veggies.map(veggie => ({...veggie}))
 export const getEntrees = () => database.entrees.map(entree => ({...entree}))
 export const getSides = () => database.sides.map(side => ({ ...side }))
 
-// THIS IS WRONG COMBOCHOICES IS AN OBJECT NOT AN ARRAY 
-// export const getComboChoices = () => database.comboChoices.map(comboChoice => ({ ...comboChoice }))
+
 
 export const getComboChoices = () => ({ ...database.comboChoices });
 
@@ -128,7 +114,7 @@ export const addPurchase = () => {
 
 
 
-    console.log("New purchase added:", newPurchase);  // Log the new purchase
+    console.log("New purchase added:", newPurchase); 
     console.log("Combo choices reset:", database.comboChoices); // Log the reset state
 
 
@@ -144,3 +130,53 @@ export const totalOrderPrice = (order) => {
 
     return total;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//State Management: The comboChoices object is acting as a 
+//temporary state holder for the user's
+// current selections. By the time placeComboOrder is called, comboChoices 
+//already contains the selected entree, veggie, and side.
+// IMPORTNAT: After the order is finalized (i.e., after the placeComboOrder 
+//function processes the current 
+//selections stored in comboChoices), you would typically want to 
+//clear the comboChoices object to reset the state and prepare for the next order.
+
+
+
+
+// THIS IS WRONG COMBOCHOICES IS AN OBJECT NOT AN ARRAY 
+// export const getComboChoices = () => database.comboChoices.map(comboChoice => ({ ...comboChoice }))
+
+
+    // database.entrees, database.veggies, database.sides: 
+    //These arrays represent all the available
+    //  options for the user to choose from. They are static and should not 
+    //change based on user interaction. 
+    // Their purpose is to provide the list of options that the user can select.
+
+
+
