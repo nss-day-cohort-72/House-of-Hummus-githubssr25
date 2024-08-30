@@ -3,8 +3,10 @@ import { getSides, setSide } from "./database.js"
 const sideDishes = getSides()
 
 document.addEventListener("change", (event) => {
+    console.log("a click event happened upon clicking sideDish so we are calling setSides()")
     if (event.target.name === "sideDish") {
-        setSide(parseInt(event.target.value))
+        setSide(parseInt(event.target.value));
+        console.log("Side selected:", event.target.value);
     }
 })
 
@@ -12,9 +14,9 @@ document.addEventListener("change", (event) => {
 export const Sides = () => {
     let html = "<ul>"
 
-    const listItems = sideDishes.map(dish => {
+    const listItems = sideDishes.map((side, index) => {
         return `<li>
-            <input type="radio" />
+            <input type="radio" name="sideDish" value="${side.id}" /> ${side.title}
         </li>`
     })
 
